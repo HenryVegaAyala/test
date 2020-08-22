@@ -216,13 +216,13 @@ export default {
         this.usersAllMutations(newData);
         Object.assign(targetCache, target);
         this.cacheData = newCacheData;
-
-        let payload = { id: key, attributes: target.state };
-        this.usersUpdateActions(payload);
       } else {
         this.cancel(key);
       }
       this.editingKey = "";
+
+      let payload = { id: key, attributes: target.state };
+      this.usersUpdateActions(payload);
     }
   },
   watch: {},
